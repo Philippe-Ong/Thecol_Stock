@@ -152,9 +152,9 @@ export default function Home() {
 
   const getStatusStyles = (status: 'ok' | 'warning' | 'expired') => {
     switch (status) {
-      case 'ok': return 'bg-emerald-100 text-emerald-800 border-emerald-200';
-      case 'warning': return 'bg-amber-100 text-amber-800 border-amber-200';
-      case 'expired': return 'bg-rose-100 text-rose-800 border-rose-200';
+      case 'ok': return 'bg-[#d4edda] text-[#3a6147] border-[#c3e6cb]';
+      case 'warning': return 'bg-[#fff3cd] text-[#856404] border-[#ffeeba]';
+      case 'expired': return 'bg-[#f8d7da] text-[#721c24] border-[#f5c6cb]';
     }
   };
 
@@ -163,10 +163,10 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-100 p-4 md:p-8 font-sans">
+    <div className="min-h-screen bg-[#f5f8f5] p-4 md:p-8 font-sans">
       <div className="max-w-7xl mx-auto">
         <header className="mb-6">
-          <h1 className="text-4xl font-bold text-slate-900">Gestion du stock</h1>
+          <h1 className="text-4xl font-bold text-[#2d3a2e]">Gestion du stock</h1>
         </header>
 
         <div className="flex gap-2 mb-6">
@@ -174,8 +174,8 @@ export default function Home() {
             onClick={() => setActiveTab('stock')}
             className={`px-5 py-2.5 rounded-lg font-medium transition-colors ${
               activeTab === 'stock' 
-                ? 'bg-blue-600 text-white' 
-                : 'bg-white text-slate-700 hover:bg-slate-200'
+                ? 'bg-[#4a7c59] text-white' 
+                : 'bg-white text-[#2d3a2e] hover:bg-[#e8f0e8]'
             }`}
           >
             Stock
@@ -184,8 +184,8 @@ export default function Home() {
             onClick={() => setActiveTab('settings')}
             className={`px-5 py-2.5 rounded-lg font-medium transition-colors ${
               activeTab === 'settings' 
-                ? 'bg-blue-600 text-white' 
-                : 'bg-white text-slate-700 hover:bg-slate-200'
+                ? 'bg-[#4a7c59] text-white' 
+                : 'bg-white text-[#2d3a2e] hover:bg-[#e8f0e8]'
             }`}
           >
             Paramètres
@@ -195,43 +195,43 @@ export default function Home() {
         {activeTab === 'stock' && (
           <div>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-              <div className="bg-white rounded-xl p-6 shadow-md border-l-4 border-emerald-500">
-                <p className="text-sm font-medium text-slate-500 uppercase tracking-wide">Vendables (&lt; 1 mois)</p>
-                <p className="text-4xl font-bold text-emerald-600 mt-1">{sellableBottles}</p>
+              <div className="bg-white rounded-xl p-6 shadow-md border-l-4 border-[#4a7c59]">
+                <p className="text-sm font-medium text-[#6b9e78] uppercase tracking-wide">Vendables (&lt; 1 mois)</p>
+                <p className="text-4xl font-bold text-[#4a7c59] mt-1">{sellableBottles}</p>
               </div>
-              <div className="bg-white rounded-xl p-6 shadow-md border-l-4 border-blue-500">
-                <p className="text-sm font-medium text-slate-500 uppercase tracking-wide">Total bouteilles</p>
-                <p className="text-4xl font-bold text-slate-800 mt-1">{totalBottles}</p>
+              <div className="bg-white rounded-xl p-6 shadow-md border-l-4 border-[#4a7c59]">
+                <p className="text-sm font-medium text-[#6b9e78] uppercase tracking-wide">Total bouteilles</p>
+                <p className="text-4xl font-bold text-[#2d3a2e] mt-1">{totalBottles}</p>
               </div>
-              <div className="bg-white rounded-xl p-6 shadow-md border-l-4 border-amber-500">
-                <p className="text-sm font-medium text-slate-500 uppercase tracking-wide">DLV passée</p>
-                <p className="text-4xl font-bold text-amber-600 mt-1">{warningLots}</p>
+              <div className="bg-white rounded-xl p-6 shadow-md border-l-4 border-[#c9a227]">
+                <p className="text-sm font-medium text-[#a88620] uppercase tracking-wide">DLV passée</p>
+                <p className="text-4xl font-bold text-[#c9a227] mt-1">{warningLots}</p>
               </div>
-              <div className="bg-white rounded-xl p-6 shadow-md border-l-4 border-rose-500">
-                <p className="text-sm font-medium text-slate-500 uppercase tracking-wide">Expirés (DLC)</p>
-                <p className="text-4xl font-bold text-rose-600 mt-1">{expiredLots}</p>
+              <div className="bg-white rounded-xl p-6 shadow-md border-l-4 border-[#c75050]">
+                <p className="text-sm font-medium text-[#a84040] uppercase tracking-wide">Expirés (DLC)</p>
+                <p className="text-4xl font-bold text-[#c75050] mt-1">{expiredLots}</p>
               </div>
             </div>
 
             {sellableSummary.length > 0 && (
           <div className="bg-white rounded-xl shadow-md mb-6 p-5">
-            <h3 className="text-lg font-bold text-slate-800 mb-4">Stock vendable</h3>
+            <h3 className="text-lg font-bold text-[#2d3a2e] mb-4">Stock vendable</h3>
             <div className="space-y-2">
               {sellableSummary.map(item => (
-                <div key={item.arome} className="border border-slate-200 rounded-lg overflow-hidden">
-                  <div className="bg-emerald-50 px-4 py-3 flex justify-between items-center">
-                    <span className="font-semibold text-emerald-800">{item.arome}</span>
-                    <span className="bg-emerald-200 text-emerald-800 px-3 py-1 rounded-full text-sm font-bold">
+                <div key={item.arome} className="border border-[#e8f0e8] rounded-lg overflow-hidden">
+                  <div className="bg-[#f5f8f5] px-4 py-3 flex justify-between items-center">
+                    <span className="font-semibold text-[#2d3a2e]">{item.arome}</span>
+                    <span className="bg-[#4a7c59] text-white px-3 py-1 rounded-full text-sm font-bold">
                       {item.total} bt
                     </span>
                   </div>
                   <div className="px-4 py-2 bg-white">
                     <div className="flex flex-wrap gap-4">
                       {item.formats.map(f => (
-                        <span key={f.format} className="text-slate-600">
+                        <span key={f.format} className="text-[#2d3a2e]">
                           <span className="font-medium">{f.format}</span>
                           <span className="mx-2">:</span>
-                          <span className="font-bold text-blue-600">{f.total}</span>
+                          <span className="font-bold text-[#4a7c59]">{f.total}</span>
                         </span>
                       ))}
                     </div>
@@ -245,15 +245,15 @@ export default function Home() {
         <div className="bg-white rounded-xl shadow-md mb-6 p-5">
           <button
             onClick={() => setShowHistory(!showHistory)}
-            className="flex items-center gap-2 text-slate-700 font-medium hover:text-blue-600 transition-colors"
+            className="flex items-center gap-2 text-[#2d3a2e] font-medium hover:text-[#4a7c59] transition-colors"
           >
             <span className="text-xl">{showHistory ? '▼' : '▶'}</span>
             Historique de production
           </button>
           {showHistory && (
-            <div className="mt-4 max-h-80 overflow-y-auto border border-slate-200 rounded-lg">
+            <div className="mt-4 max-h-80 overflow-y-auto border border-[#e8f0e8] rounded-lg">
               <table className="w-full text-base">
-                <thead className="bg-slate-800 text-white sticky top-0">
+                <thead className="bg-[#4a7c59] text-white sticky top-0">
                   <tr>
                     <th className="px-4 py-3 text-left font-semibold">Date prod.</th>
                     <th className="px-4 py-3 text-left font-semibold">Arôme</th>
@@ -263,25 +263,25 @@ export default function Home() {
                     <th className="px-4 py-3 text-center font-semibold"></th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-slate-200 bg-white">
+                <tbody className="divide-y divide-[#e8f0e8] bg-white">
                   {history.length === 0 ? (
                     <tr>
-                      <td colSpan={6} className="px-4 py-6 text-center text-slate-500 text-lg">
+                      <td colSpan={6} className="px-4 py-6 text-center text-[#6b9e78] text-lg">
                         Aucun historique
                       </td>
                     </tr>
                   ) : (
                     history.map(record => (
-                      <tr key={record.id} className="hover:bg-slate-50">
-                        <td className="px-4 py-3 text-slate-700">{formatDate(record.productionDate)}</td>
-                        <td className="px-4 py-3 text-slate-700 font-medium">{record.arome}</td>
-                        <td className="px-4 py-3 text-slate-700">{record.format}</td>
-                        <td className="px-4 py-3 text-center font-bold text-blue-600">{record.quantity}</td>
-                        <td className="px-4 py-3 text-slate-500">{new Date(record.dateAdded).toLocaleDateString('fr-CH')}</td>
+                      <tr key={record.id} className="hover:bg-[#f5f8f5]">
+                        <td className="px-4 py-3 text-[#2d3a2e]">{formatDate(record.productionDate)}</td>
+                        <td className="px-4 py-3 text-[#2d3a2e] font-medium">{record.arome}</td>
+                        <td className="px-4 py-3 text-[#2d3a2e]">{record.format}</td>
+                        <td className="px-4 py-3 text-center font-bold text-[#4a7c59]">{record.quantity}</td>
+                        <td className="px-4 py-3 text-[#6b9e78]">{new Date(record.dateAdded).toLocaleDateString('fr-CH')}</td>
                         <td className="px-4 py-3 text-center">
                           <button
                             onClick={() => handleDeleteHistoryRecord(record.id)}
-                            className="text-rose-500 hover:text-rose-700 text-sm"
+                            className="text-[#c75050] hover:text-[#a84040] text-sm"
                             title="Supprimer"
                           >
                             ✕
@@ -300,7 +300,7 @@ export default function Home() {
           <div className="flex flex-wrap gap-4 items-center justify-between">
             <div className="flex flex-wrap gap-3">
               <select
-                className="px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent cursor-pointer"
+                className="px-4 py-2.5 bg-[#f5f8f5] border border-[#e8f0e8] rounded-lg text-[#2d3a2e] focus:outline-none focus:ring-2 focus:ring-[#4a7c59] focus:border-transparent cursor-pointer"
                 value={filterArome}
                 onChange={(e) => setFilterAroma(e.target.value as Arome | '')}
               >
@@ -310,17 +310,7 @@ export default function Home() {
                 ))}
               </select>
               <select
-                className="px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent cursor-pointer"
-                value={filterFormat}
-                onChange={(e) => setFilterFormat(e.target.value as Format | '')}
-              >
-                <option value="">Tous les formats</option>
-                {formats.map(f => (
-                  <option key={f} value={f}>{f}</option>
-                ))}
-              </select>
-              <select
-                className="px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent cursor-pointer"
+                className="px-4 py-2.5 bg-[#f5f8f5] border border-[#e8f0e8] rounded-lg text-[#2d3a2e] focus:outline-none focus:ring-2 focus:ring-[#4a7c59] focus:border-transparent cursor-pointer"
                 value={filterFormat}
                 onChange={(e) => setFilterFormat(e.target.value as Format | '')}
               >
@@ -332,7 +322,7 @@ export default function Home() {
             </div>
             <button
               onClick={() => setShowAddForm(!showAddForm)}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-lg font-medium transition-colors shadow-sm hover:shadow-md"
+              className="bg-[#4a7c59] hover:bg-[#3a6147] text-white px-5 py-2.5 rounded-lg font-medium transition-colors shadow-sm hover:shadow-md"
             >
               + Nouveau lot
             </button>
@@ -341,12 +331,12 @@ export default function Home() {
 
         {showAddForm && (
           <div className="bg-white rounded-xl shadow-md mb-6 p-6">
-            <h2 className="text-xl font-semibold text-slate-800 mb-5">Ajouter un nouveau lot</h2>
+            <h2 className="text-xl font-semibold text-[#2d3a2e] mb-5">Ajouter un nouveau lot</h2>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-5">
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">Arôme</label>
+                <label className="block text-sm font-medium text-[#2d3a2e] mb-2">Arôme</label>
                 <select
-                  className="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  className="w-full px-4 py-2.5 bg-[#f5f8f5] border border-[#e8f0e8] rounded-lg text-[#2d3a2e] focus:outline-none focus:ring-2 focus:ring-[#4a7c59]"
                   value={newLot.arome}
                   onChange={(e) => setNewLot({ ...newLot, arome: e.target.value as Arome })}
                 >
@@ -356,9 +346,9 @@ export default function Home() {
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">Format</label>
+                <label className="block text-sm font-medium text-[#2d3a2e] mb-2">Format</label>
                 <select
-                  className="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  className="w-full px-4 py-2.5 bg-[#f5f8f5] border border-[#e8f0e8] rounded-lg text-[#2d3a2e] focus:outline-none focus:ring-2 focus:ring-[#4a7c59]"
                   value={newLot.format}
                   onChange={(e) => setNewLot({ ...newLot, format: e.target.value as Format })}
                 >
@@ -368,20 +358,20 @@ export default function Home() {
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">Quantité</label>
+                <label className="block text-sm font-medium text-[#2d3a2e] mb-2">Quantité</label>
                 <input
                   type="number"
                   min="1"
-                  className="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  className="w-full px-4 py-2.5 bg-[#f5f8f5] border border-[#e8f0e8] rounded-lg text-[#2d3a2e] focus:outline-none focus:ring-2 focus:ring-[#4a7c59]"
                   value={newLot.quantity}
                   onChange={(e) => setNewLot({ ...newLot, quantity: parseInt(e.target.value) || 1 })}
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">Date production</label>
+                <label className="block text-sm font-medium text-[#2d3a2e] mb-2">Date production</label>
                 <input
                   type="date"
-                  className="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  className="w-full px-4 py-2.5 bg-[#f5f8f5] border border-[#e8f0e8] rounded-lg text-[#2d3a2e] focus:outline-none focus:ring-2 focus:ring-[#4a7c59]"
                   value={newLot.productionDate}
                   onChange={(e) => setNewLot({ ...newLot, productionDate: e.target.value })}
                 />
@@ -390,13 +380,13 @@ export default function Home() {
             <div className="mt-6 flex gap-3">
               <button
                 onClick={handleAddLot}
-                className="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2.5 rounded-lg font-medium transition-colors shadow-sm"
+                className="bg-[#4a7c59] hover:bg-[#3a6147] text-white px-5 py-2.5 rounded-lg font-medium transition-colors shadow-sm"
               >
                 Ajouter
               </button>
               <button
                 onClick={() => setShowAddForm(false)}
-                className="bg-slate-200 hover:bg-slate-300 text-slate-700 px-5 py-2.5 rounded-lg font-medium transition-colors"
+                className="bg-[#e8f0e8] hover:bg-[#d8e8d8] text-[#2d3a2e] px-5 py-2.5 rounded-lg font-medium transition-colors"
               >
                 Annuler
               </button>
@@ -407,7 +397,7 @@ export default function Home() {
         <div className="bg-white rounded-xl shadow-md overflow-hidden">
           <div className="overflow-x-auto">
             <table className="w-full">
-              <thead className="bg-slate-800 text-white">
+              <thead className="bg-[#4a7c59] text-white">
                 <tr>
                   <th className="px-5 py-4 text-left text-sm font-semibold">Lot</th>
                   <th className="px-5 py-4 text-left text-sm font-semibold">Arôme</th>
@@ -420,10 +410,10 @@ export default function Home() {
                   <th className="px-5 py-4 text-center text-sm font-semibold">Actions</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-200">
+              <tbody className="divide-y divide-[#e8f0e8]">
                 {filteredLots.length === 0 ? (
                   <tr>
-                    <td colSpan={9} className="px-5 py-12 text-center text-slate-500 text-lg">
+                    <td colSpan={9} className="px-5 py-12 text-center text-[#6b9e78] text-lg">
                       Aucun lot en stock
                     </td>
                   </tr>
@@ -431,18 +421,18 @@ export default function Home() {
                   filteredLots.map((lot, index) => {
                     const status = getStatus(lot);
                     return (
-                      <tr key={lot.id} className={`hover:bg-slate-50 transition-colors ${index % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'}`}>
-                        <td className="px-5 py-4 text-sm text-slate-600 font-mono">#{lot.id.slice(-6)}</td>
-                        <td className="px-5 py-4 font-medium text-slate-800">{lot.arome}</td>
-                        <td className="px-5 py-4 text-slate-700">{lot.format}</td>
+                      <tr key={lot.id} className={`hover:bg-[#f5f8f5] transition-colors ${index % 2 === 0 ? 'bg-white' : 'bg-[#fafefa]'}`}>
+                        <td className="px-5 py-4 text-sm text-[#6b9e78] font-mono">#{lot.id.slice(-6)}</td>
+                        <td className="px-5 py-4 font-medium text-[#2d3a2e]">{lot.arome}</td>
+                        <td className="px-5 py-4 text-[#2d3a2e]">{lot.format}</td>
                         <td className="px-5 py-4 text-center">
-                          <span className="inline-flex items-center justify-center w-10 h-10 bg-blue-100 text-blue-800 font-bold rounded-full">
+                          <span className="inline-flex items-center justify-center w-10 h-10 bg-[#4a7c59] text-white font-bold rounded-full">
                             {lot.quantity}
                           </span>
                         </td>
-                        <td className="px-5 py-4 text-slate-600 text-sm">{formatDate(lot.productionDate)}</td>
-                        <td className="px-5 py-4 text-slate-600 text-sm">{formatDate(lot.saleLimitDate)}</td>
-                        <td className="px-5 py-4 text-slate-600 text-sm">{formatDate(lot.consumptionLimitDate)}</td>
+                        <td className="px-5 py-4 text-[#6b9e78] text-sm">{formatDate(lot.productionDate)}</td>
+                        <td className="px-5 py-4 text-[#6b9e78] text-sm">{formatDate(lot.saleLimitDate)}</td>
+                        <td className="px-5 py-4 text-[#6b9e78] text-sm">{formatDate(lot.consumptionLimitDate)}</td>
                         <td className="px-5 py-4 text-center">
                           <span className={`inline-block px-3 py-1.5 rounded-full text-xs font-semibold border ${getStatusStyles(status)}`}>
                             {status === 'ok' ? 'OK' : status === 'warning' ? 'DLV passée' : 'Expiré'}
@@ -455,19 +445,19 @@ export default function Home() {
                                 type="number"
                                 min="1"
                                 max={lot.quantity}
-                                className="w-16 px-2 py-1.5 border border-slate-300 rounded-lg text-center text-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                                className="w-16 px-2 py-1.5 border border-[#e8f0e8] rounded-lg text-center text-[#2d3a2e] focus:outline-none focus:ring-2 focus:ring-[#4a7c59]"
                                 value={sellQty}
                                 onChange={(e) => setSellQty(parseInt(e.target.value) || 1)}
                               />
                               <button
                                 onClick={() => handleSell(lot.id)}
-                                className="text-emerald-600 hover:text-emerald-800 font-bold px-2"
+                                className="text-[#4a7c59] hover:text-[#3a6147] font-bold px-2"
                               >
                                 ✓
                               </button>
                               <button
                                 onClick={() => setShowSellForm(null)}
-                                className="text-slate-400 hover:text-slate-600 font-bold px-2"
+                                className="text-[#6b9e78] hover:text-[#2d3a2e] font-bold px-2"
                               >
                                 ✕
                               </button>
@@ -476,19 +466,19 @@ export default function Home() {
                             <div className="flex gap-3 justify-center">
                               <button
                                 onClick={() => setShowSellForm(lot.id)}
-                                className="text-blue-600 hover:text-blue-800 font-medium text-sm px-3 py-1.5 rounded-lg hover:bg-blue-50 transition-colors"
+                                className="text-[#4a7c59] hover:text-[#3a6147] font-medium text-sm px-3 py-1.5 rounded-lg hover:bg-[#e8f0e8] transition-colors"
                               >
                                 Vendre
                               </button>
                               <button
                                 onClick={() => handleDeleteLot(lot.id)}
-                                className="text-rose-600 hover:text-rose-800 font-medium text-sm px-3 py-1.5 rounded-lg hover:bg-rose-50 transition-colors"
+                                className="text-[#c75050] hover:text-[#a84040] font-medium text-sm px-3 py-1.5 rounded-lg hover:bg-[#fce8e8] transition-colors"
                               >
                                 Supprimer
                               </button>
                               <button
                                 onClick={() => setEditingLot(lot)}
-                                className="text-purple-600 hover:text-purple-800 font-medium text-sm px-3 py-1.5 rounded-lg hover:bg-purple-50 transition-colors"
+                                className="text-[#8b7355] hover:text-[#6b5335] font-medium text-sm px-3 py-1.5 rounded-lg hover:bg-[#f5f0e8] transition-colors"
                               >
                                 Modifier
                               </button>
@@ -507,23 +497,23 @@ export default function Home() {
         {editingLot && (
           <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
             <div className="bg-white rounded-xl shadow-2xl p-6 w-full max-w-md">
-              <h3 className="text-xl font-bold text-slate-800 mb-5">Modifier le lot #{editingLot.id}</h3>
+              <h3 className="text-xl font-bold text-[#2d3a2e] mb-5">Modifier le lot #{editingLot.id}</h3>
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">Quantité</label>
+                  <label className="block text-sm font-medium text-[#2d3a2e] mb-2">Quantité</label>
                   <input
                     type="number"
                     min="1"
-                    className="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    className="w-full px-4 py-2.5 bg-[#f5f8f5] border border-[#e8f0e8] rounded-lg text-[#2d3a2e] focus:outline-none focus:ring-2 focus:ring-[#4a7c59]"
                     value={editingLot.quantity}
                     onChange={(e) => setEditingLot({ ...editingLot, quantity: parseInt(e.target.value) || 1 })}
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">Date production</label>
+                  <label className="block text-sm font-medium text-[#2d3a2e] mb-2">Date production</label>
                   <input
                     type="date"
-                    className="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    className="w-full px-4 py-2.5 bg-[#f5f8f5] border border-[#e8f0e8] rounded-lg text-[#2d3a2e] focus:outline-none focus:ring-2 focus:ring-[#4a7c59]"
                     value={editingLot.productionDate}
                     onChange={(e) => setEditingLot({ ...editingLot, productionDate: e.target.value })}
                   />
@@ -532,13 +522,13 @@ export default function Home() {
               <div className="mt-6 flex gap-3">
                 <button
                   onClick={handleEditLot}
-                  className="flex-1 bg-purple-600 hover:bg-purple-700 text-white px-5 py-2.5 rounded-lg font-medium transition-colors shadow-sm"
+                  className="flex-1 bg-[#8b7355] hover:bg-[#6b5335] text-white px-5 py-2.5 rounded-lg font-medium transition-colors shadow-sm"
                 >
                   Enregistrer
                 </button>
                 <button
                   onClick={() => setEditingLot(null)}
-                  className="flex-1 bg-slate-200 hover:bg-slate-300 text-slate-700 px-5 py-2.5 rounded-lg font-medium transition-colors"
+                  className="flex-1 bg-[#e8f0e8] hover:bg-[#d8e8d8] text-[#2d3a2e] px-5 py-2.5 rounded-lg font-medium transition-colors"
                 >
                   Annuler
                 </button>
@@ -552,30 +542,30 @@ export default function Home() {
         {activeTab === 'settings' && (
           <div className="space-y-6">
             <div className="bg-white rounded-xl shadow-md p-6">
-              <h3 className="text-lg font-bold text-slate-800 mb-4">Gestion des arômes</h3>
+              <h3 className="text-lg font-bold text-[#2d3a2e] mb-4">Gestion des arômes</h3>
               <div className="flex gap-3 mb-4">
                 <input
                   type="text"
                   placeholder="Nouvel arôme"
-                  className="flex-1 px-4 py-2.5 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  className="flex-1 px-4 py-2.5 border border-[#e8f0e8] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4a7c59]"
                   value={newArome}
                   onChange={(e) => setNewArome(e.target.value)}
                   onKeyDown={(e) => e.key === 'Enter' && handleAddArome()}
                 />
                 <button
                   onClick={handleAddArome}
-                  className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg font-medium"
+                  className="bg-[#4a7c59] hover:bg-[#3a6147] text-white px-4 py-2 rounded-lg font-medium"
                 >
                   Ajouter
                 </button>
               </div>
               <div className="flex flex-wrap gap-2">
                 {aromas.map(a => (
-                  <div key={a} className="flex items-center gap-2 bg-slate-100 px-3 py-2 rounded-lg">
-                    <span className="text-slate-700">{a}</span>
+                  <div key={a} className="flex items-center gap-2 bg-[#f5f8f5] px-3 py-2 rounded-lg">
+                    <span className="text-[#2d3a2e]">{a}</span>
                     <button
                       onClick={() => handleRemoveArome(a)}
-                      className="text-rose-500 hover:text-rose-700"
+                      className="text-[#c75050] hover:text-[#a84040]"
                     >
                       ✕
                     </button>
@@ -585,30 +575,30 @@ export default function Home() {
             </div>
 
             <div className="bg-white rounded-xl shadow-md p-6">
-              <h3 className="text-lg font-bold text-slate-800 mb-4">Gestion des formats</h3>
+              <h3 className="text-lg font-bold text-[#2d3a2e] mb-4">Gestion des formats</h3>
               <div className="flex gap-3 mb-4">
                 <input
                   type="text"
                   placeholder="Nouveau format (ex: 0.33l)"
-                  className="flex-1 px-4 py-2.5 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  className="flex-1 px-4 py-2.5 border border-[#e8f0e8] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4a7c59]"
                   value={newFormat}
                   onChange={(e) => setNewFormat(e.target.value)}
                   onKeyDown={(e) => e.key === 'Enter' && handleAddFormat()}
                 />
                 <button
                   onClick={handleAddFormat}
-                  className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg font-medium"
+                  className="bg-[#4a7c59] hover:bg-[#3a6147] text-white px-4 py-2 rounded-lg font-medium"
                 >
                   Ajouter
                 </button>
               </div>
               <div className="flex flex-wrap gap-2">
                 {formats.map(f => (
-                  <div key={f} className="flex items-center gap-2 bg-slate-100 px-3 py-2 rounded-lg">
-                    <span className="text-slate-700">{f}</span>
+                  <div key={f} className="flex items-center gap-2 bg-[#f5f8f5] px-3 py-2 rounded-lg">
+                    <span className="text-[#2d3a2e]">{f}</span>
                     <button
                       onClick={() => handleRemoveFormat(f)}
-                      className="text-rose-500 hover:text-rose-700"
+                      className="text-[#c75050] hover:text-[#a84040]"
                     >
                       ✕
                     </button>
