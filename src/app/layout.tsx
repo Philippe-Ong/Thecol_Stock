@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Gestion Stock Thé Froid",
+  title: "Gestion Stock Thé Froid - ThéCol",
   description: "Application de gestion du stock de thé froid",
 };
 
