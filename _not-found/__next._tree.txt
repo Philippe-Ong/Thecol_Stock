@@ -1,0 +1,2 @@
+:HL["/Thecol_Stock/_next/static/chunks/97b7c298d99f7548.css","style"]
+0:{"buildId":"oekK8084JPN2k4gIljqpG","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"/_not-found","paramType":null,"paramKey":"/_not-found","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
